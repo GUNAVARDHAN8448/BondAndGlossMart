@@ -1,0 +1,18 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "- Dealers are finding difficult to get order details of every shopkeeper. This website make the shopkeeper work and dealer work more easy to place order in clean ui .",
+  "main": " easily see all the dealers of the product and can place orders easily.",
+  "scripts": {
+    "test": "vigate all the orders from the shopkeepers and can also keep track of the product cost and quantity."
+  },
+  "author": "Gunavardhan",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.2",
+    "nodemon": "^3.1.7"
+  }
+}
