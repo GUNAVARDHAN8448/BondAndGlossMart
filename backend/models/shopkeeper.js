@@ -44,9 +44,13 @@ const shopKeeperSchema = new Schema({
         trim: true
     },
     phoneNo: {
-        type: String,
+        type: Number,
         require: true,
         trim: true
+    },
+    shopName: {
+        type: String,
+        required: true
     },
     address: {
         type: addressSchema,
@@ -59,9 +63,7 @@ const shopKeeperSchema = new Schema({
 }, { timestamps: true })
 
 const shopkeeperModel = mongoose.model('Shopkeeper', shopKeeperSchema);
-const addressModel = mongoose.model('Address', addressSchema);
 
 module.exports = {
-    shopkeeperModel,
-    addressModel
+    shopkeeperModel
 }

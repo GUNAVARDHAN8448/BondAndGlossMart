@@ -1,6 +1,30 @@
 const mongoose = require("mongoose");
-const { addressModel } = require("./SHOPKEEPER");
+const { addressModel } = require("./shopkeeper");
 const { Schema } = mongoose;
+const addressSchema = new Schema({
+    firstLine: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    secondLine: {
+        type: String,
+    },
+    city: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    state: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    pincode: {
+        type: Number,
+        required: true,
+    }
+});
 
 const dealerSchema = new Schema({
     shopName: {
@@ -25,13 +49,17 @@ const dealerSchema = new Schema({
         trim: true,
     },
     address: {
-        type: addressModel,
+        type: addressSchema,
         required: true,
     },
+    password: {
+        type: String,
+        required: true,
+    }
 }, { timestamps: true });
 
-dealerModel = mongoose.model('Dealer', dealerSchema);
-module.exports = { dealermodel }
+const dealerModel = mongoose.model('Dealer', dealerSchema);
+module.exports = { dealerModel }
 
 
 
