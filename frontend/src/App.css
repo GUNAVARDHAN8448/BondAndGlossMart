@@ -1,42 +1,81 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Global Styles */
+html,
+body {
+  font-family: 'Inter', sans-serif;
+  /* Import Inter or any other font */
+  background-color: #f1f5f9;
+  /* Primary background color */
+  color: #2d3748;
+  /* Default text color */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Navbar and Footer Background */
+.navbar,
+.footer {
+  background-color: #075985;
+  /* Navbar and footer color */
+  color: white;
+  /* Text color for navbar and footer */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Button Styles */
+button {
+  background-color: #0f766e;
+  /* Default button color */
+  color: white;
+  /* Button text color */
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+button:hover {
+  background-color: #0a5b5a;
+  /* Button hover color */
 }
 
-.card {
-  padding: 2em;
+/* Link Styles */
+a {
+  color: #0f766e;
+  /* Link color */
+  text-decoration: none;
+  /* Remove underline */
+  transition: color 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+a:hover {
+  color: #0a5b5a;
+  /* Link hover color */
 }
+
+/* Utility Classes for Flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Utility Classes for Spacing */
+.space-x-4>*+* {
+  margin-left: 1rem;
+  /* Adjust spacing as needed */
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  background-color: #f1f5f9;
+  /* Dropdown background color */
+  color: #2d3748;
+  /* Dropdown text color */
+  border-radius: 0.375rem;
+  /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Shadow effect */
+}
+
+/* Other Custom Styles as Needed */

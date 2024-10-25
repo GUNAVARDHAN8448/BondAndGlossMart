@@ -1,15 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { dealerSingupState } from '../../atoms/dealerSingupAtom';
 import { dealerSingupStep1Data } from '../../selectors/dealerSingupSelectors';
-
+import { dealerSingupState } from '../../atoms/dealerSingupAtom';
 
 function DealerStep1({ nextStep }) {
-
-
     const step1FormData = useRecoilValue(dealerSingupStep1Data);
     const [formData, setFormData] = useRecoilState(dealerSingupState);
-
 
     function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,25 +15,65 @@ function DealerStep1({ nextStep }) {
         e.preventDefault();
         nextStep();
     };
+
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>Email:</label>
-                <input type="email" name="email" value={step1FormData.email} onChange={handleChange} required />
+        <form onSubmit={handleSubmit} className="space-y-4">
+            <label className="block">
+                Email:
+                <input
+                    type="email"
+                    name="email"
+                    value={step1FormData.email}
+                    onChange={handleChange}
+                    required
+                    className="border rounded-md w-full p-2 mt-1"
+                />
+            </label>
 
-                <label>Phone Number:</label>
-                <input type="tel" name="phoneNo" value={step1FormData.phoneNo} onChange={handleChange} required />
+            <label className="block">
+                Phone Number:
+                <input
+                    type="tel"
+                    name="phoneNo"
+                    value={step1FormData.phoneNo}
+                    onChange={handleChange}
+                    required
+                    className="border rounded-md w-full p-2 mt-1"
+                />
+            </label>
 
-                <label>Password:</label>
-                <input type="password" name="password" value={step1FormData.password} onChange={handleChange} required />
+            <label className="block">
+                Password:
+                <input
+                    type="password"
+                    name="password"
+                    value={step1FormData.password}
+                    onChange={handleChange}
+                    required
+                    className="border rounded-md w-full p-2 mt-1"
+                />
+            </label>
 
-                <label>Confirm Password:</label>
-                <input type="password" name="confirmPassword" value={step1FormData.confirmPassword} onChange={handleChange} required />
+            <label className="block">
+                Confirm Password:
+                <input
+                    type="password"
+                    name="confirmPassword"
+                    value={step1FormData.confirmPassword}
+                    onChange={handleChange}
+                    required
+                    className="border rounded-md w-full p-2 mt-1"
+                />
+            </label>
 
-                <button type="submit">Next</button>
-            </form>
-        </div>
-    )
+            <button
+                type="submit"
+                className="w-full bg-[#075985] text-white py-2 rounded-md hover:bg-[#0e3f4f] transition duration-300"
+            >
+                Next
+            </button>
+        </form>
+    );
 }
 
-export default DealerStep1
+export default DealerStep1;
